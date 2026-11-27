@@ -1,3 +1,54 @@
+<img src="assets/banner.svg" width="100%" alt="Victor Hugo Lopes — full-stack developer, Next.js and Supabase. Brazil, Madeira, Tomar, Białystok.">
+
+### Hi, I'm Victor 👋
+
+🔭 Currently building **restaurant-food-cost**, a food cost tracker for independent restaurants<br>
+🎓 Software development student · Universidade Politécnica de Tomar · Erasmus in Poland<br>
+🍽️ Before code: F&B manager leading a team of 35
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=ts,nextjs,react,supabase,postgres,java,cs,unity,docker,git&theme=dark" alt="TypeScript, Next.js, React, Supabase, PostgreSQL, Java, C#, Unity, Docker, Git">
+</p>
+
+#### Featured projects
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://github.com/MarcondezVictor/wayfinder"><img src="assets/wayfinder.jpg" width="100%" alt="wayfinder home page with the interactive world map"></a>
+      <br><a href="https://github.com/MarcondezVictor/wayfinder"><b>wayfinder</b></a>
+      <br>Travel planning platform: interactive map, visas, costs and trip comparison. <a href="https://way-finder-fawn.vercel.app">Live demo ↗</a>
+      <br><sub>Next.js · TypeScript · Supabase</sub>
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://github.com/kv4044/RobotRAG"><img src="assets/robotrag.svg" width="100%" alt="RobotRAG: an agent that plays on its own, class champion"></a>
+      <br><a href="https://github.com/kv4044/RobotRAG"><b>RobotRAG</b></a> 🏆
+      <br>Autonomous robot for a 3D arena with a local RAG pipeline (Ollama). Class champion.
+      <br><sub>Java · Ollama · RAG</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://github.com/MarcondezVictor/restaurant-food-cost"><img src="assets/restaurant-food-cost.svg" width="100%" alt="restaurant-food-cost: real food cost, invoice to plate, in progress"></a>
+      <br><a href="https://github.com/MarcondezVictor/restaurant-food-cost"><b>restaurant-food-cost</b></a>
+      <br>Food cost tracker built for a real restaurant, from purchase invoice to the cost of every dish.
+      <br><sub>Next.js · Supabase · PostgreSQL</sub>
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://github.com/MarcondezVictor/survival-3d"><img src="assets/survival.jpg" width="100%" alt="survival-3d: low-poly forest seen in first person"></a>
+      <br><a href="https://github.com/MarcondezVictor/survival-3d"><b>survival-3d</b></a>
+      <br>First-person survival game prototype: gathering, inventory, hunger, building and NavMesh wildlife.
+      <br><sub>Unity · C#</sub>
+    </td>
+  </tr>
+</table>
+
+Also: [countrypedia](https://marcondezvictor.github.io/countrypedia/) (197-country encyclopedia, live) · [finance-manager](https://github.com/MarcondezVictor/finance-manager) (Next.js + Strapi finance app) · contributor to [UniPortal](https://uniportal-nu-murex.vercel.app) (30-student university portal)
+
+<details>
+<summary>More about me</summary>
+<br>
+
 <a href="https://github.com/MarcondezVictor">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg">
@@ -5,21 +56,9 @@
   </picture>
 </a>
 
-🔭 Currently building **restaurant-food-cost** · 🎓 Erasmus at Politechnika Białostocka (Poland)
+</details>
 
-### Featured projects
+#### Connect
 
-| Project | What it is | Stack |
-|---|---|---|
-| [**wayfinder**](https://github.com/MarcondezVictor/wayfinder) | Travel planning platform — interactive map, visas, costs and trip comparison · [live](https://way-finder-fawn.vercel.app) | Next.js, TypeScript, Supabase |
-| **UniPortal** | University services portal (one login for all student services) — group project, I built the one-stop shop for Academic Services requests and the scholarships & housing module · [live](https://uniportal-nu-murex.vercel.app) | Next.js, TypeScript, Supabase |
-| [**restaurant-food-cost**](https://github.com/MarcondezVictor/restaurant-food-cost) | Food cost tracker built for a real independent restaurant · 🚧 in progress | Next.js, TypeScript, Supabase |
-| [**finance-manager**](https://github.com/MarcondezVictor/finance-manager) | Personal finance manager with per-user data and a charts dashboard | Next.js, Strapi |
-| [**survival-3d**](https://github.com/MarcondezVictor/survival-3d) | First-person survival game prototype — gathering, inventory, hunger, building and NavMesh wildlife | Unity, C# |
-| [**RobotRAG**](https://github.com/kv4044/RobotRAG) | Autonomous arena robot with a local RAG pipeline — 🏆 class champion | Java, Ollama |
-| [**countrypedia**](https://github.com/MarcondezVictor/countrypedia) | Country encyclopedia for 197 countries · [live](https://marcondezvictor.github.io/countrypedia/) | HTML, CSS, JavaScript |
-
-### Contact
-
-📧 marcondezvictor@gmail.com
-<!-- LinkedIn: TODO -->
+<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"><!-- LinkedIn: TODO -->
+<a href="mailto:marcondezvictor@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
