@@ -42,10 +42,9 @@ async function getStats() {
     `query($login: String!) {
       user(login: $login) {
         createdAt
-        followers { totalCount }
         repositories(ownerAffiliations: OWNER, privacy: PUBLIC, isFork: false, first: 100) {
           totalCount
-          nodes { name stargazerCount }
+          nodes { name }
         }
         repositoriesContributedTo(includeUserRepositories: false, contributionTypes: [COMMIT, PULL_REQUEST]) { totalCount }
       }
@@ -87,8 +86,6 @@ async function getStats() {
   return {
     repos: user.repositories.totalCount,
     contributed: user.repositoriesContributedTo.totalCount,
-    stars: user.repositories.nodes.reduce((sum, r) => sum + r.stargazerCount, 0),
-    followers: user.followers.totalCount,
     commits,
     additions,
     deletions,
@@ -142,15 +139,15 @@ function infoLines(s) {
     blank(),
     kv('Languages.Programming', 'TypeScript, Java, C#, Kotlin'),
     kv('Languages.Computer', 'HTML, CSS, SQL, Markdown'),
-    kv('Languages.Real', 'Portuguese, English'),
+    kv('Languages.Real', 'Portuguese, English, Spanish'),
     blank(),
     kv('Hobbies.Software', 'Web apps, Game dev'),
     kv('Hobbies.Other', 'Movies, Music, Geography'),
     kv('Before.Code', 'Restaurant management'),
     blank(),
     header('GitHub Stats'),
-    kvPlus('Repos', `${fmt(s.repos)} {Contributed: ${fmt(s.contributed)}}`, [[' | ', 'cc'], ['Stars', 'key'], [': ', ''], [fmt(s.stars), 'value']]),
-    kvPlus('Commits', fmt(s.commits), [[' | ', 'cc'], ['Followers', 'key'], [': ', ''], [fmt(s.followers), 'value']]),
+    kv('Repos', `${fmt(s.repos)} {Contributed: ${fmt(s.contributed)}}`),
+    kv('Commits', fmt(s.commits)),
     kvPlus('Lines of Code', fmt(s.additions - s.deletions), [
       [' ( ', ''], [fmt(s.additions) + '++', 'add'], [', ', ''], [fmt(s.deletions) + '--', 'del'], [' )', ''],
     ]),
