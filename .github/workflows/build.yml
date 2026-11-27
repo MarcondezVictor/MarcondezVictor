@@ -1,0 +1,36 @@
+# Rebuilds the profile card (uptime + GitHub stats) once a day.
+name: Build profile card
+
+on:
+  schedule:
+    - cron: "0 4 * * *" # 04:00 UTC every day
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["scripts/**", "ascii*.txt"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build cards
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/build.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dark_mode.svg light_mode.svg
+          git diff --cached --quiet || git commit -m "chore: update profile card"
+          git push
