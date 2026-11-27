@@ -3,7 +3,7 @@
 ### Hi, I'm Victor 👋
 
 🔭 Currently building **restaurant-food-cost**, a food cost tracker for independent restaurants<br>
-🎓 Software development student · Universidade Politécnica de Tomar · Erasmus in Poland<br>
+🎓 Software development student · Polytechnic University of Tomar · Erasmus in Poland<br>
 🍽️ Before code: F&B manager leading a team of 35
 
 <p align="center">
@@ -52,7 +52,7 @@ Also: [countrypedia](https://marcondezvictor.github.io/countrypedia/) (197-count
 <a href="https://github.com/MarcondezVictor">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg">
-    <img alt="Victor Lopes — Software Development student (2-year higher diploma) at Universidade Politécnica de Tomar, on Erasmus at Politechnika Białostocka. Languages: TypeScript, Java, C#, Python. Stack: Next.js, React, Supabase, Strapi, Unity. Tools: Git, Docker, Ollama, Cisco Packet Tracer. Networking: subnetting, VLANs, routing. Speaks Portuguese, English and Spanish. Before code: F&amp;B manager leading a team of 35. GitHub stats: public repos, commits and lines of hand-written code." src="light_mode.svg">
+    <img alt="Victor Lopes — Software Development student (2-year higher diploma) at Polytechnic University of Tomar, on Erasmus at Politechnika Białostocka. Languages: TypeScript, Java, C#, Python. Stack: Next.js, React, Supabase, Strapi, Unity. Tools: Git, Docker, Ollama, Cisco Packet Tracer. Networking: subnetting, VLANs, routing. Speaks Portuguese, English and Spanish. Before code: F&amp;B manager leading a team of 35. GitHub stats: public repos, commits and lines of hand-written code." src="light_mode.svg">
   </picture>
 </a>
 
