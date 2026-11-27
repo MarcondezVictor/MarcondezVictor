@@ -37,6 +37,91 @@ async function graphql(query, variables = {}) {
   return json.data;
 }
 
+// ---------------------------------------------------------------- lines of code
+//
+// Counts only hand-written code. GitHub's contributor stats only give weekly
+// totals per repo, so they can't be filtered by file. Instead we walk every
+// non-merge commit authored by USER on each repo's default branch and sum the
+// per-file additions/deletions from the commit endpoint, keeping only files
+// that pass isOwnCode().
+
+const CODE_EXTENSIONS = new Set([
+  'ts', 'tsx', 'js', 'jsx', 'mjs', 'java', 'cs', 'kt', 'c', 'h', 'py', 'php', 'sql', 'css', 'html',
+]);
+
+const EXCLUDED_PATHS = [
+  /(^|\/)(node_modules|dist|build|out|\.next|coverage)\//, // build output and dependencies
+  /(^|\/)types\/generated\//, // Strapi generated types
+  /(^|\/)documentation\//, // Strapi generated API docs
+  /\.min\.js$/, // minified bundles
+  /(^|\/)(Packages|ProjectSettings|Library|Temp)\//, // Unity engine and editor folders
+  /(^|\/)Assets\/TextMesh Pro\//, // Unity package imported into Assets
+  /(^|\/)Assets\/TutorialInfo\//, // sample scripts from the Unity project template
+  /(^|\/)\.(idea|vscode)\//, // editor configuration
+];
+
+function isOwnCode(path) {
+  const ext = path.split('.').pop().toLowerCase();
+  if (!CODE_EXTENSIONS.has(ext)) return false; // also drops lockfiles, images, Unity assets, JSON
+  return !EXCLUDED_PATHS.some((re) => re.test(path));
+}
+
+// GET that retries on rate limits / server errors and fails loudly instead of
+// silently returning nothing (which would make the line count quietly wrong).
+async function ghRetry(path) {
+  for (let attempt = 1; attempt <= 5; attempt++) {
+    const { status, json } = await gh(path);
+    if (status === 200) return json;
+    if (status !== 403 && status !== 429 && status < 500) throw new Error(`GET ${path} -> ${status}`);
+    await new Promise((r) => setTimeout(r, attempt * 5000));
+  }
+  throw new Error(`GET ${path} kept failing`);
+}
+
+async function commitFiles(repo, sha) {
+  // The commit endpoint lists 300 files per page by default (up to 3000 in total)
+  const files = [];
+  for (let page = 1; ; page++) {
+    const json = await ghRetry(`/repos/${USER}/${repo}/commits/${sha}?page=${page}`);
+    const batch = json.files ?? [];
+    files.push(...batch);
+    if (batch.length < 300) return { parents: json.parents?.length ?? 1, files };
+  }
+}
+
+async function linesOfCode(repos) {
+  let additions = 0;
+  let deletions = 0;
+  for (const repo of repos) {
+    const shas = [];
+    for (let page = 1; ; page++) {
+      const { status, json } = await gh(`/repos/${USER}/${repo}/commits?author=${USER}&per_page=100&page=${page}`);
+      if (status !== 200 || !Array.isArray(json) || json.length === 0) break; // empty repo or no commits
+      shas.push(...json.filter((c) => c.parents.length <= 1).map((c) => c.sha)); // skip merge commits
+      if (json.length < 100) break;
+    }
+    // fetch commit details a few at a time to keep it fast without hammering the API
+    let repoAdd = 0;
+    let repoDel = 0;
+    for (let i = 0; i < shas.length; i += 4) {
+      const details = await Promise.all(shas.slice(i, i + 4).map((sha) => commitFiles(repo, sha)));
+      for (const { files } of details) {
+        for (const f of files) {
+          if (!isOwnCode(f.filename)) continue;
+          repoAdd += f.additions;
+          repoDel += f.deletions;
+        }
+      }
+    }
+    additions += repoAdd;
+    deletions += repoDel;
+    if (process.env.LOC_DEBUG) console.log(`  ${repo}: ${shas.length} commits, +${repoAdd} -${repoDel}`);
+  }
+  return { additions, deletions };
+}
+
+// ---------------------------------------------------------------- profile
+
 async function getStats() {
   const { user } = await graphql(
     `query($login: String!) {
@@ -65,23 +150,7 @@ async function getStats() {
     commits += data.user.contributionsCollection.totalCommitContributions;
   }
 
-  // Lines of code: additions/deletions authored by USER in their own repos
-  let additions = 0;
-  let deletions = 0;
-  for (const repo of user.repositories.nodes) {
-    let result;
-    for (let attempt = 0; attempt < 6; attempt++) {
-      result = await gh(`/repos/${USER}/${repo.name}/stats/contributors`);
-      if (result.status !== 202) break; // 202 = GitHub is still computing the stats
-      await new Promise((r) => setTimeout(r, 3000));
-    }
-    if (!Array.isArray(result.json)) continue;
-    const me = result.json.find((c) => c.author?.login?.toLowerCase() === USER.toLowerCase());
-    for (const week of me?.weeks ?? []) {
-      additions += week.a;
-      deletions += week.d;
-    }
-  }
+  const { additions, deletions } = await linesOfCode(user.repositories.nodes.map((r) => r.name));
 
   return {
     repos: user.repositories.totalCount,
