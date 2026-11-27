@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["scripts/**", "ascii*.txt"]
+    paths: ["scripts/**"]
 
 permissions:
   contents: write

@@ -1,15 +1,20 @@
 // Builds dark_mode.svg and light_mode.svg: a neofetch-style profile card.
-// ASCII portrait on the left, info + live GitHub stats on the right.
+// Info block with live GitHub stats, sized to stay readable in the profile column.
 //
 // Usage: GH_TOKEN=<token> node scripts/build.mjs
 // Runs daily in .github/workflows/build.yml. Node 20+, no dependencies.
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { writeFileSync } from 'node:fs';
 
 const USER = 'MarcondezVictor';
 const BIRTH = new Date(Date.UTC(2004, 9, 30)); // 30 Oct 2004
 const TOKEN = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
-const WIDTH = 60; // characters per info line
+
+const WIDTH = 56; // characters per info line
+const FONT_SIZE = 18; // px
+const CHAR_W = FONT_SIZE * 0.55; // approx. width of one monospace character
+const LINE_H = Math.round(FONT_SIZE * 1.3);
+const PAD = 28;
 
 // ---------------------------------------------------------------- stats
 
@@ -153,46 +158,34 @@ function infoLines(s) {
 }
 
 const THEMES = {
-  dark: { bg: '#161b22', text: '#c9d1d9', key: '#ffa657', value: '#a5d6ff', cc: '#616e7f', add: '#3fb950', del: '#f85149', art: '#c9d1d9' },
-  light: { bg: '#f6f8fa', text: '#24292f', key: '#953800', value: '#0a3069', cc: '#c2cfde', add: '#1a7f37', del: '#cf222e', art: '#24292f' },
+  // GitHub dark palette
+  dark: { bg: '#161b22', border: '#30363d', text: '#c9d1d9', key: '#ffa657', value: '#a5d6ff', cc: '#6e7681', add: '#3fb950', del: '#f85149' },
+  // GitHub light palette: dark text on white, colours picked for contrast on a light background
+  light: { bg: '#ffffff', border: '#d0d7de', text: '#1f2328', key: '#bc4c00', value: '#0550ae', cc: '#8c959f', add: '#1a7f37', del: '#cf222e' },
 };
 
-function svg(theme, art, lines) {
+function svg(theme, lines) {
   const t = THEMES[theme];
-  const LINE_H = 20;
-  const CHAR_W = 8.8; // approx. width of one 16px monospace character
-  const artX = 15;
-  const artCols = Math.max(...art.map((row) => row.length));
-  const infoX = Math.round(artX + artCols * CHAR_W + 25);
-  const cardW = Math.round(infoX + WIDTH * CHAR_W + 25);
-  const rows = Math.max(art.length, lines.length + 4);
-  const height = rows * LINE_H + 30;
-  const top = 30;
-  // vertically centre the info block next to the portrait
-  const infoTop = top + Math.max(0, Math.floor((art.length - lines.length) / 2)) * LINE_H;
+  const cardW = Math.round(PAD * 2 + WIDTH * CHAR_W);
+  const top = PAD + FONT_SIZE;
+  const height = top + (lines.length - 1) * LINE_H + PAD;
 
-  const artSvg = art
-    .map((row, i) => `<tspan x="${artX}" y="${top + i * LINE_H}">${esc(row)}</tspan>`)
-    .join('\n');
   const infoSvg = lines
     .map((segments, i) => {
       const spans = segments.map(([text, cls]) => (cls ? `<tspan class="${cls}">${esc(text)}</tspan>` : esc(text))).join('');
-      return `<tspan x="${infoX}" y="${infoTop + i * LINE_H}">${spans}</tspan>`;
+      return `<tspan x="${PAD}" y="${top + i * LINE_H}">${spans}</tspan>`;
     })
     .join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,'Courier New',monospace" width="${cardW}px" height="${height}px" font-size="16px">
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,'Courier New',monospace" width="${cardW}px" height="${height}px" font-size="${FONT_SIZE}px">
 <style>
 .key { fill: ${t.key}; } .value { fill: ${t.value}; } .cc { fill: ${t.cc}; }
 .add { fill: ${t.add}; } .del { fill: ${t.del}; }
 text, tspan { white-space: pre; }
 </style>
-<rect width="${cardW}px" height="${height}px" fill="${t.bg}" rx="15"/>
-<text x="${artX}" y="${top}" fill="${t.art}" class="ascii">
-${artSvg}
-</text>
-<text x="${infoX}" y="${infoTop}" fill="${t.text}">
+<rect x="0.5" y="0.5" width="${cardW - 1}px" height="${height - 1}px" fill="${t.bg}" stroke="${t.border}" rx="15"/>
+<text x="${PAD}" y="${top}" fill="${t.text}">
 ${infoSvg}
 </text>
 </svg>
@@ -202,13 +195,9 @@ ${infoSvg}
 // ---------------------------------------------------------------- main
 
 if (!TOKEN) throw new Error('Set GH_TOKEN (or GITHUB_TOKEN) to read GitHub stats.');
-// ascii.txt: bright areas are dense (for dark backgrounds).
-// ascii_light.txt: the same portrait inverted, so it reads correctly on light backgrounds.
-const readArt = (file) => readFileSync(new URL(`../${file}`, import.meta.url), 'utf8').replace(/\r/g, '').trimEnd().split('\n');
-const art = { dark: readArt('ascii.txt'), light: readArt('ascii_light.txt') };
 const stats = await getStats();
 const lines = infoLines(stats);
 for (const theme of ['dark', 'light']) {
-  writeFileSync(new URL(`../${theme}_mode.svg`, import.meta.url), svg(theme, art[theme], lines));
+  writeFileSync(new URL(`../${theme}_mode.svg`, import.meta.url), svg(theme, lines));
 }
 console.log('Built cards:', JSON.stringify(stats), '| uptime:', uptime());
