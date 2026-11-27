@@ -46,19 +46,6 @@
 
 Also: [countrypedia](https://marcondezvictor.github.io/countrypedia/) (197-country encyclopedia, live) · [finance-manager](https://github.com/MarcondezVictor/finance-manager) (Next.js + Strapi finance app) · contributor to [UniPortal](https://uniportal-nu-murex.vercel.app) (30-student university portal)
 
-<details>
-<summary>More about me</summary>
-<br>
-
-<a href="https://github.com/MarcondezVictor">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg">
-    <img alt="Victor Lopes — Software Development student (2-year higher diploma) at Polytechnic University of Tomar, on Erasmus at Politechnika Białostocka. Languages: TypeScript, Java, C#, Python. Stack: Next.js, React, Supabase, Strapi, Unity. Tools: Git, Docker, Ollama, Cisco Packet Tracer. Networking: subnetting, VLANs, routing. Speaks Portuguese, English and Spanish. Before code: F&amp;B manager leading a team of 35. GitHub stats: public repos, commits and lines of hand-written code." src="light_mode.svg">
-  </picture>
-</a>
-
-</details>
-
 #### Connect
 
 <!-- LinkedIn: TODO — paste the profile URL into href and move this line out of the comment:
