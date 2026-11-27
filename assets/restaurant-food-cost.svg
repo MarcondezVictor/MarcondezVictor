@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="360"><rect width="640" height="360" fill="#161b22"/>
 <g font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
-<text x="40" y="70" font-size="15" fill="#d29922">🚧 IN PROGRESS · E1</text>
+<text x="40" y="70" font-size="15" fill="#d29922">IN PROGRESS · E1</text>
 <text x="40" y="130" font-size="34" font-weight="600" fill="#e6edf3">Real food cost,</text>
 <text x="40" y="172" font-size="34" font-weight="600" fill="#e6edf3">invoice to plate.</text>
 <text x="40" y="225" font-size="17" fill="#8b949e">Multi-tenant · Row Level Security · pgTAP tests</text>
