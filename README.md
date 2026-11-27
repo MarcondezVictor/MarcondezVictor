@@ -35,7 +35,7 @@
       <br><sub>Next.js · Supabase · PostgreSQL</sub>
     </td>
     <td width="50%" valign="top">
-      <a href="https://github.com/MarcondezVictor/survival-3d"><img src="assets/survival.jpg" width="100%" alt="survival-3d: low-poly forest seen in first person"></a>
+      <a href="https://github.com/MarcondezVictor/survival-3d"><img src="assets/survival.gif" width="100%" alt="survival-3d gameplay: exploring the low-poly forest, gathering resources and placing blocks"></a>
       <br><a href="https://github.com/MarcondezVictor/survival-3d"><b>survival-3d</b></a>
       <br>First-person survival game prototype: gathering, inventory, hunger, building and NavMesh wildlife.
       <br><sub>Unity · C#</sub>
