@@ -59,8 +59,8 @@ text, tspan { white-space: pre; }
 <tspan x="400" y="430"><tspan class="cc">. </tspan><tspan class="key">Before.Code</tspan>:<tspan class="cc"> ........................ </tspan><tspan class="value">Restaurant management</tspan></tspan>
 <tspan x="400" y="450"></tspan>
 <tspan x="400" y="470">— GitHub Stats <tspan class="cc">—————————————————————————————————————————————</tspan></tspan>
-<tspan x="400" y="490"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> ...................... </tspan><tspan class="value">7 {Contributed: 2}</tspan><tspan class="cc"> | </tspan><tspan class="key">Stars</tspan>: <tspan class="value">0</tspan></tspan>
-<tspan x="400" y="510"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> ............................... </tspan><tspan class="value">118</tspan><tspan class="cc"> | </tspan><tspan class="key">Followers</tspan>: <tspan class="value">2</tspan></tspan>
-<tspan x="400" y="530"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan>:<tspan class="cc"> ............ </tspan><tspan class="value">158,053</tspan> ( <tspan class="add">172,805++</tspan>, <tspan class="del">14,752--</tspan> )</tspan>
+<tspan x="400" y="490"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> ...................... </tspan><tspan class="value">7 {Contributed: 1}</tspan><tspan class="cc"> | </tspan><tspan class="key">Stars</tspan>: <tspan class="value">0</tspan></tspan>
+<tspan x="400" y="510"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> ............................... </tspan><tspan class="value">119</tspan><tspan class="cc"> | </tspan><tspan class="key">Followers</tspan>: <tspan class="value">2</tspan></tspan>
+<tspan x="400" y="530"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan>:<tspan class="cc"> ............ </tspan><tspan class="value">158,516</tspan> ( <tspan class="add">173,268++</tspan>, <tspan class="del">14,752--</tspan> )</tspan>
 </text>
 </svg>
