@@ -160,8 +160,11 @@ const THEMES = {
 function svg(theme, art, lines) {
   const t = THEMES[theme];
   const LINE_H = 20;
+  const CHAR_W = 8.8; // approx. width of one 16px monospace character
   const artX = 15;
-  const infoX = 400;
+  const artCols = Math.max(...art.map((row) => row.length));
+  const infoX = Math.round(artX + artCols * CHAR_W + 25);
+  const cardW = Math.round(infoX + WIDTH * CHAR_W + 25);
   const rows = Math.max(art.length, lines.length + 4);
   const height = rows * LINE_H + 30;
   const top = 30;
@@ -179,13 +182,13 @@ function svg(theme, art, lines) {
     .join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,'Courier New',monospace" width="985px" height="${height}px" font-size="16px">
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,'Courier New',monospace" width="${cardW}px" height="${height}px" font-size="16px">
 <style>
 .key { fill: ${t.key}; } .value { fill: ${t.value}; } .cc { fill: ${t.cc}; }
 .add { fill: ${t.add}; } .del { fill: ${t.del}; }
 text, tspan { white-space: pre; }
 </style>
-<rect width="985px" height="${height}px" fill="${t.bg}" rx="15"/>
+<rect width="${cardW}px" height="${height}px" fill="${t.bg}" rx="15"/>
 <text x="${artX}" y="${top}" fill="${t.art}" class="ascii">
 ${artSvg}
 </text>
