@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360"><rect width="640" height="360" fill="#161b22"/>
+<g font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<text x="40" y="70" font-size="15" fill="#d29922">🚧 IN PROGRESS · E1</text>
+<text x="40" y="130" font-size="34" font-weight="600" fill="#e6edf3">Real food cost,</text>
+<text x="40" y="172" font-size="34" font-weight="600" fill="#e6edf3">invoice to plate.</text>
+<text x="40" y="225" font-size="17" fill="#8b949e">Multi-tenant · Row Level Security · pgTAP tests</text>
+<rect x="40" y="260" width="90" height="28" rx="14" fill="#1f6feb33"/><text x="56" y="279" font-size="14" fill="#58a6ff">Next.js</text>
+<rect x="140" y="260" width="105" height="28" rx="14" fill="#2386363a"/><text x="156" y="279" font-size="14" fill="#3fb950">Supabase</text>
+<rect x="255" y="260" width="110" height="28" rx="14" fill="#8957e533"/><text x="271" y="279" font-size="14" fill="#a371f7">PostgreSQL</text>
+</g></svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360"><rect width="640" height="360" fill="#161b22"/>
+<g font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+<text x="40" y="66" font-size="15" fill="#d29922">CLASS CHAMPION · ARENA 3D</text>
+<text x="40" y="126" font-size="34" font-weight="600" fill="#e6edf3">An agent that plays</text>
+<text x="40" y="168" font-size="34" font-weight="600" fill="#e6edf3">on its own.</text>
+<text x="40" y="218" font-size="17" fill="#8b949e">Live telemetry · heat-map navigation · local RAG</text>
+<text x="40" y="242" font-size="17" fill="#8b949e">solves vault riddles with Ollama</text>
+<rect x="40" y="276" width="70" height="28" rx="14" fill="#f8982033"/><text x="58" y="295" font-size="14" fill="#f0883e">Java</text>
+<rect x="120" y="276" width="86" height="28" rx="14" fill="#8b949e33"/><text x="137" y="295" font-size="14" fill="#c9d1d9">Ollama</text>
+<rect x="216" y="276" width="66" height="28" rx="14" fill="#1f6feb33"/><text x="233" y="295" font-size="14" fill="#58a6ff">RAG</text>
+</g>
+<g transform="translate(470,70)" stroke="#d29922" stroke-width="2" fill="none" opacity=".9">
+<rect x="0" y="0" width="120" height="120" rx="6"/><rect x="20" y="20" width="80" height="80" rx="4" stroke-dasharray="4 4"/>
+<circle cx="60" cy="60" r="8" fill="#58a6ff" stroke="none"/><path d="M60 60 L95 30" stroke="#58a6ff"/><rect x="88" y="22" width="14" height="14" fill="#d29922" stroke="none"/>
+</g></svg>
