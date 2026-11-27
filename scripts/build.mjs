@@ -212,7 +212,7 @@ function infoLines(s) {
   return [
     [['victor', 'key'], ['@', ''], ['lopes', 'key'], [' ' + '—'.repeat(WIDTH - 13), 'cc']],
     kv('Uptime', uptime()),
-    kv('Host', 'Universidade Politécnica de Tomar'),
+    kv('Host', 'Polytechnic University of Tomar'),
     kv('Kernel', 'Software Development (2-year higher diploma)'),
     kv('Erasmus', 'Politechnika Białostocka, Poland'),
     kv('IDE', 'VS Code, IntelliJ IDEA, Unity'),

@@ -9,7 +9,7 @@ text, tspan { white-space: pre; }
 <text x="28" y="46" fill="#c9d1d9">
 <tspan x="28" y="46"><tspan class="key">victor</tspan>@<tspan class="key">lopes</tspan><tspan class="cc"> ———————————————————————————————————————————</tspan></tspan>
 <tspan x="28" y="69"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ................... </tspan><tspan class="value">22 years, 0 months, 28 days</tspan></tspan>
-<tspan x="28" y="92"><tspan class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ............... </tspan><tspan class="value">Universidade Politécnica de Tomar</tspan></tspan>
+<tspan x="28" y="92"><tspan class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ................. </tspan><tspan class="value">Polytechnic University of Tomar</tspan></tspan>
 <tspan x="28" y="115"><tspan class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> .. </tspan><tspan class="value">Software Development (2-year higher diploma)</tspan></tspan>
 <tspan x="28" y="138"><tspan class="cc">. </tspan><tspan class="key">Erasmus</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">Politechnika Białostocka, Poland</tspan></tspan>
 <tspan x="28" y="161"><tspan class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> .................... </tspan><tspan class="value">VS Code, IntelliJ IDEA, Unity</tspan></tspan>
@@ -26,8 +26,8 @@ text, tspan { white-space: pre; }
 <tspan x="28" y="414"><tspan class="cc">. </tspan><tspan class="key">Before.Code</tspan>:<tspan class="cc"> ................. </tspan><tspan class="value">F&amp;B manager · team of 35</tspan></tspan>
 <tspan x="28" y="437"></tspan>
 <tspan x="28" y="460">— GitHub Stats <tspan class="cc">—————————————————————————————————————————</tspan></tspan>
-<tspan x="28" y="483"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">7 {Contributed: 1}</tspan></tspan>
-<tspan x="28" y="506"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> .......................................... </tspan><tspan class="value">128</tspan></tspan>
+<tspan x="28" y="483"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">7 {Contributed: 2}</tspan></tspan>
+<tspan x="28" y="506"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> .......................................... </tspan><tspan class="value">142</tspan></tspan>
 <tspan x="28" y="529"><tspan class="cc">. </tspan><tspan class="key">Lines of Code</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">13,263</tspan> ( <tspan class="add">21,852++</tspan>, <tspan class="del">8,589--</tspan> )</tspan>
 </text>
 </svg>
