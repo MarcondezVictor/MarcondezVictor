@@ -211,20 +211,22 @@ const blank = () => [['', '']];
 function infoLines(s) {
   return [
     [['victor', 'key'], ['@', ''], ['lopes', 'key'], [' ' + '—'.repeat(WIDTH - 13), 'cc']],
-    kv('OS', 'Windows 11, iOS'),
     kv('Uptime', uptime()),
-    kv('Host', 'Instituto Politécnico de Tomar'),
-    kv('Kernel', 'CTeSP TPSI · Software Development'),
+    kv('Host', 'Universidade Politécnica de Tomar'),
+    kv('Kernel', 'Software Development (2-year higher diploma)'),
     kv('Erasmus', 'Politechnika Białostocka, Poland'),
     kv('IDE', 'VS Code, IntelliJ IDEA, Unity'),
     blank(),
-    kv('Languages.Programming', 'TypeScript, Java, C#, Kotlin'),
-    kv('Languages.Computer', 'HTML, CSS, SQL, Markdown'),
+    kv('Languages.Programming', 'TypeScript, Java, C#, Python'),
+    kv('Languages.Computer', 'HTML, CSS, SQL (PostgreSQL)'),
     kv('Languages.Real', 'Portuguese, English, Spanish'),
+    kv('Stack', 'Next.js, React, Supabase, Strapi, Unity'),
+    kv('Tools', 'Git, Docker, Ollama, Cisco Packet Tracer'),
+    kv('Networking', 'Subnetting, VLANs, routing'),
     blank(),
     kv('Hobbies.Software', 'Web apps, Game dev'),
     kv('Hobbies.Other', 'Movies, Music, Geography'),
-    kv('Before.Code', 'Restaurant management'),
+    kv('Before.Code', 'F&B manager · team of 35'),
     blank(),
     header('GitHub Stats'),
     kv('Repos', `${fmt(s.repos)} {Contributed: ${fmt(s.contributed)}}`),
@@ -244,7 +246,8 @@ const THEMES = {
 
 function svg(theme, lines) {
   const t = THEMES[theme];
-  const cardW = Math.round(PAD * 2 + WIDTH * CHAR_W);
+  // kv lines are WIDTH + 1 characters long (". " prefix and the spaces around the dots)
+  const cardW = Math.round(PAD * 2 + (WIDTH + 1) * CHAR_W);
   const top = PAD + FONT_SIZE;
   const height = top + (lines.length - 1) * LINE_H + PAD;
 
