@@ -60,5 +60,7 @@ Also: [countrypedia](https://marcondezvictor.github.io/countrypedia/) (197-count
 
 #### Connect
 
-<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"><!-- LinkedIn: TODO -->
+<!-- LinkedIn: TODO — paste the profile URL into href and move this line out of the comment:
+<a href="LINKEDIN_URL"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+-->
 <a href="mailto:marcondezvictor@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
