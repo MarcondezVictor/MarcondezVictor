@@ -16,7 +16,7 @@
 <table>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://github.com/MarcondezVictor/wayfinder"><img src="assets/wayfinder.jpg" width="100%" alt="wayfinder home page with the interactive world map"></a>
+      <a href="https://github.com/MarcondezVictor/wayfinder"><img src="assets/wayfinder.gif" width="100%" alt="wayfinder demo: searching the world map, opening a country page and comparing two countries"></a>
       <br><a href="https://github.com/MarcondezVictor/wayfinder"><b>wayfinder</b></a>
       <br>Travel planning platform: interactive map, visas, costs and trip comparison. <a href="https://way-finder-fawn.vercel.app">Live demo ↗</a>
       <br><sub>Next.js · TypeScript · Supabase</sub>
