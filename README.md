@@ -21,7 +21,7 @@
       <br><sub>Next.js · TypeScript · Supabase</sub>
     </td>
     <td width="50%" valign="top">
-      <a href="https://github.com/kv4044/RobotRAG"><img src="assets/robotrag.svg" width="100%" alt="RobotRAG: an agent that plays on its own, class champion"></a>
+      <a href="https://github.com/kv4044/RobotRAG"><img src="assets/robotrag.gif" width="100%" alt="RobotRAG demo: the agent plays on its own while its heat map fills in next to the live 3D arena"></a>
       <br><a href="https://github.com/kv4044/RobotRAG"><b>RobotRAG</b></a> 🏆
       <br>Autonomous robot for a 3D arena with a local RAG pipeline (Ollama). Class champion.
       <br><sub>Java · Ollama · RAG</sub>
