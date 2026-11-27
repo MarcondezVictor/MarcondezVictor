@@ -4,7 +4,8 @@
 
 🔭 Currently building **restaurant-food-cost**, a food cost tracker for independent restaurants<br>
 🎓 Software development student · Polytechnic University of Tomar · Erasmus in Poland<br>
-🍽️ Before code: F&B manager leading a team of 35
+🍽️ Before code: F&B manager leading a team of 35<br>
+🔎 Looking for a curricular internship in software development (640 h, spring 2027) · Portugal, EU or remote
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=ts,nextjs,react,python,tailwind,supabase,postgres,java,cs,unity,docker,git&theme=dark" alt="TypeScript, Next.js, React, Python, Tailwind CSS, Supabase, PostgreSQL, Java, C#, Unity, Docker, Git"><img src="assets/packet-tracer.svg" height="48" alt="Cisco Packet Tracer" title="Cisco Packet Tracer">
